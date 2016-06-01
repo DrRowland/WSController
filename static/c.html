@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Contoller</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style type="text/css">
+      div {display:inline-block;height:33%;width:33%;padding:0px;border:0px;margin:0px;}
+      .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;       /* Internet Explorer/Edge */
+        user-select: none;           /* Non-prefixed version, currently
+                                        not supported by any browser */
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+
+        var obj0 = document.getElementById('0');
+        obj0.addEventListener('touchstart',function(event){ws.send('+0');},false);
+        obj0.addEventListener('touchend', function(event) {ws.send('-0');},false);
+        var obj1 = document.getElementById('1');
+        obj1.addEventListener('touchstart',function(event){ws.send('+8');},false);
+        obj1.addEventListener('touchend', function(event) {ws.send('-8');},false);
+        var obj2 = document.getElementById('2');
+        obj2.addEventListener('touchstart',function(event){ws.send('+6');},false);
+        obj2.addEventListener('touchend', function(event) {ws.send('-6');},false);
+        var obj3 = document.getElementById('3');
+        obj3.addEventListener('touchstart',function(event){ws.send('+2');},false);
+        obj3.addEventListener('touchend', function(event) {ws.send('-2');},false);
+        var obj4 = document.getElementById('4');
+        obj4.addEventListener('touchstart',function(event){ws.send('+4');},false);
+        obj4.addEventListener('touchend', function(event) {ws.send('-4');},false);
+        var obj5 = document.getElementById('5');
+        obj5.addEventListener('touchstart',function(event){ws.send('+3');},false);
+        obj5.addEventListener('touchend', function(event) {ws.send('-3');},false);
+        var obj6 = document.getElementById('6');
+        obj6.addEventListener('touchstart',function(event){ws.send('+1');},false);
+        obj6.addEventListener('touchend', function(event) {ws.send('-1');},false);
+        var obj7 = document.getElementById('7');
+        obj7.addEventListener('touchstart',function(event){ws.send('+5');},false);
+        obj7.addEventListener('touchend', function(event) {ws.send('-5');},false);
+        var obj8 = document.getElementById('8');
+        obj8.addEventListener('touchstart',function(event){ws.send('+7');},false);
+        obj8.addEventListener('touchend', function(event) {ws.send('-7');},false);
+
+        /*$("#0").mouseup(function(){ws.send('-0');}).mousedown(function(){ws.send('+0');});*/
+
+        ws = new WebSocket("ws://192.168.1.102:8888/ws");
+
+        // Handle incoming websocket message callback (should be none!)
+        ws.onmessage = function(evt) {
+          alert("message received: " + evt.data);
+        };
+
+        // Close Websocket callback
+        ws.onclose = function(evt) {
+          alert("Connection close");
+        };
+
+        // Open Websocket callback
+        ws.onopen = function(evt) {
+          alert("Connection opened");
+        };
+
+      });
+    </script>
+  </head>
+
+  <body style="overflow:hidden;padding:0px;border:0px;margin:0px;">
+
+<div style="background-image:url(background.png);background-size:99%99%;height:101vh;width:101vw;font-size:0;padding:0px;border:0px;margin:0px;">
+  <div id='0' class='noselect' style="background:transparent;font-size:medium;"></div>
+  <div id='1' class='noselect' style="background:transparent;font-size:medium;"></div>
+  <div id='2' class='noselect' style="background:transparent;font-size:medium;"></div>
+
+  <div id='3' class='noselect' style="background:transparent;font-size:medium;"></div>
+  <div id='4' class='noselect' style="background:transparent;font-size:medium;"></div>
+  <div id='5' class='noselect' style="background:transparent;font-size:medium;"></div>
+
+  <div id='6' class='noselect' style="background:transparent;font-size:medium;"></div>
+  <div id='7' class='noselect' style="background:transparent;font-size:medium;"></div>
+  <div id='8' class='noselect' style="background:transparent;font-size:medium;"></div>
+</div>
+
+  </body>
+</html>
