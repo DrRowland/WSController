@@ -50,7 +50,7 @@
 
         /*$("#0").mouseup(function(){ws.send('-0');}).mousedown(function(){ws.send('+0');});*/
 
-        ws = new WebSocket("ws://192.168.1.102:8888/ws");
+        ws = new WebSocket("ws://172.24.1.1:8888/ws");
 
         // Handle incoming websocket message callback (should be none!)
         ws.onmessage = function(evt) {
