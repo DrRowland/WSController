@@ -1,4 +1,5 @@
-# WSController
+# WSController  
+(Writen for [RetroPie](https://retropie.org.uk/download/) v3.8 - 27th May  2016)
 
 Setup notes (optional):
 
