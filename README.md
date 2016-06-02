@@ -1,5 +1,5 @@
 # WSController  
-(Writen for [RetroPie](https://retropie.org.uk/download/) v3.8)
+(Writen for [RetroPie](https://retropie.org.uk/download/) v3.8 for RPi2/3)
 
 Setup notes (optional):
 
