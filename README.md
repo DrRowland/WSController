@@ -7,9 +7,9 @@ https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostap
 
 Port 8080 -> 80 (run server as user)
 ```
-# iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
-# iptables -A INPUT -i eth0 -p tcp --dport 8080 -j ACCEPT
-# iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+# iptables -A INPUT -i wlan0 -p tcp --dport 80 -j ACCEPT
+# iptables -A INPUT -i wlan0 -p tcp --dport 8080 -j ACCEPT
+# iptables -A PREROUTING -t nat -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 8080
 # iptables-save > /etc/iptables.ipv4.nat
 ```
 /etc/dnsmasq.conf
